@@ -13,7 +13,6 @@ trainingData <- subset(mushroom, sample == TRUE)
 testingData <- subset(mushroom, sample == FALSE)
 
 dt.Model      <- rpart( class ~ ., data = trainingData )
-cp.optim <- dt.Model$cptable[which.min(dt.Model$cptable[,"xerror"]),"CP"]
+rpart.plot(dt.Model)
 dt.Prediction <- predict( dt.Model, newdata = testingData,type ="class" )
 print(confusionMatrix(table(dt.Prediction,testingData$class) ))
-# rpart.plot(dt.Prediction)
