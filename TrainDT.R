@@ -1,5 +1,5 @@
 library(data.tree)
-mushroom <- read.csv("mushrooms.csv", header = TRUE)
+mushroom <- read.csv("movie.csv", header = TRUE)
 IsPure <- function(data) {
 # all first column in mushroom is class
   length(unique(mushroom[,1]) == 1)
